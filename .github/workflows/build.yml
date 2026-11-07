@@ -1,9 +1,8 @@
-```yaml
 name: Build APK
 
 on:
-  push:
-  workflow_dispatch:
+  push: {}
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -41,4 +40,3 @@ jobs:
           name: MultiSpace-debug-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
-```
