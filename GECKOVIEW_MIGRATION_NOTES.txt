@@ -1,0 +1,9 @@
+MultiSpace 1.2.0 GeckoView experimental migration
+
+This source replaces Android System WebView with Mozilla GeckoView. Each profile uses a stable context ID derived from its existing profile UUID, so different profiles have isolated cookies and site storage. Existing WebView cookies/login sessions cannot be imported into GeckoView; they are not deliberately deleted from the old engine data, but the new engine starts fresh.
+
+Important: This is an experimental source migration, not a verified release. It has not been compiled or tested on a physical Android device in this environment. GeckoView is a large native dependency; first GitHub Actions build may expose API or dependency issues. The permission prompts, file chooser, pop-up/new-window routing, and complete download handling still require dedicated implementation before calling this a finished browser.
+
+Do not uninstall the current MultiSpace app until the new APK has been installed and tested.
+
+The debug build uses applicationIdSuffix .gecko so it installs alongside the existing MultiSpace app and does not overwrite its local database or WebView data. Because Android treats it as a separate app, its profile list starts empty; create a new test profile for Qwen/HappyHorse.
